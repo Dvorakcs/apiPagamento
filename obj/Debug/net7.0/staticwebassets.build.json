@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "Q6Hjhys5YhKRx7HtbchySXi8qwwq+QeVXX5Q1XrtkJs=",
+  "Source": "apiPagamento",
+  "BasePath": "_content/apiPagamento",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
