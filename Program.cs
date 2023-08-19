@@ -1,8 +1,13 @@
+using Microsoft.EntityFrameworkCore;
+using apiPagamento.Models;
+using apiPagamento.Context;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
+builder.Services.AddDbContext<PagamentoContext>(opt => opt.UseInMemoryDatabase("PagamentoDb"));
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
