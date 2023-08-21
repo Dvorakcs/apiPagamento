@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using apiPagamento.Context;
 using apiPagamento.Models;
+using apiPagamento.Services;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace apiPagamento.Controllers
 {
@@ -14,11 +16,17 @@ namespace apiPagamento.Controllers
     [ApiController]
     public class UsuarioController : ControllerBase
     {
-        private readonly PagamentoContext _context;
+        private readonly UsuarioService _usuario;
 
-        public UsuarioController(PagamentoContext context)
+        public UsuarioController(UsuarioService _usuario)
         {
-            _context = context;
+           this._usuario = _usuario;
+        }
+
+        [HttpGet]
+        public IActionResult list(){
+
+            return Ok(_usuario.GetUser());
         }
 
     }
