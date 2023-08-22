@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/0BKndmfe5YjyIuksfQ9wOb5fueCUMs0F+GCb1oibQ3tCoidzK3EHFE87LVa3FHzW4nT0d/diXmQ06tb+LzHdg==",
+  "dgSpecHash": "zBzRlbycNiZEosw8Qe/8xRIpZtHNAW3jfedL0FIaQGrtITSLBBBVQddY7l5nI00WNEl0Sdvq0pxb/gskf7rZZQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\marce\\Desktop\\PagamentoApi\\apiPagamento\\apiPagamento.csproj",
+  "projectFilePath": "C:\\GIT\\Projetos\\ProjetoBanco\\apiPagamento.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\marce\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\marce\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
