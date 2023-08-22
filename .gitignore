@@ -1,0 +1,8 @@
+﻿################################################################################
+# Este arquivo .gitignore foi criado automaticamente pelo Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/apiPagamento/FileContentIndex/c1b65518-fc28-44c2-ad50-240a1d6f724a.vsidx
+/.vs/apiPagamento/v17/.suo
+*.sln
+*.vsidx
