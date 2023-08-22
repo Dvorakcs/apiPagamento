@@ -23,11 +23,33 @@ namespace apiPagamento.Controllers
            this._usuario = _usuario;
         }
 
-        [HttpGet]
-        public IActionResult list(){
+        [HttpGet("GetAll")]
+        public IActionResult GetAll(){
 
-            return Ok(_usuario.GetUser());
+            return Ok(_usuario.GetAllUser());
         }
 
+        [HttpGet]
+        public IActionResult Get(int id)
+        {
+
+            return Ok(_usuario.GetUser(id));
+        }
+
+        [HttpPost]
+        public IActionResult Post(Usuario usuario)
+        {
+            try
+            {
+                _usuario.AddUser(usuario);
+                return Ok("Sucess");
+            }
+            catch (Exception)
+            {
+                return Ok("Failled");
+                throw;
+            }
+            
+        }
     }
 }
