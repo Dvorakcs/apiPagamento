@@ -29,4 +29,9 @@ public class UsuarioService {
     {
         usuarioRespository.Add(usuario);
     }
+
+    public Usuario GetUserForLogin(string email, string password)
+    {
+        return usuarioRespository.GetUserForLogin(email, password);
+    }
 }

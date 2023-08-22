@@ -9,5 +9,6 @@ public interface IUsuarioRespository{
     Usuario Get(int id);
     Usuario Update(Usuario usuario);
     bool Delete(Usuario usuario);
+    Usuario GetUserForLogin(string email,string password);
 
 }

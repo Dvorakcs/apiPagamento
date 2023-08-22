@@ -43,4 +43,10 @@ public class UsuarioRepository: IUsuarioRespository {
 
         return usuario;
     }
+
+    public Usuario GetUserForLogin(string email, string password)
+    {
+       Usuario usuarioDb = _context.usuarios.FirstOrDefault(x => x.Email == email && x.Senha == password);
+        return usuarioDb;
+    }
 }
