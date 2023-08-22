@@ -11,7 +11,22 @@ public class UsuarioService {
     }
 
 
-    public List<Usuario> GetUser(){
+    public List<Usuario> GetAllUser(){
         return usuarioRespository.Get();
+    }
+
+    public Usuario GetUser(Usuario usuario)
+    {
+        return usuarioRespository.Get(usuario.Id);
+    }
+
+    public Usuario GetUser(int id)
+    {
+        return usuarioRespository.Get(id);
+    }
+
+    public void AddUser(Usuario usuario)
+    {
+        usuarioRespository.Add(usuario);
     }
 }

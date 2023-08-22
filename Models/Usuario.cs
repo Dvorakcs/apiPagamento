@@ -11,17 +11,16 @@ public class Usuario{
     public string Email { get; set; }
     public string Senha { get; set; }
     public string ConfirmaSenha { get; set; }
-    public int tipoUsuarioId {get; set;}
-    public TipoUsuario tipoUsuario {get; set;}
+    public TipoUsuario Tipo { get; set; }
 
 
-   public Usuario(string Nome, string CPF, string Email, string Senha, string ConfirmaSenha, int tipoUsuarioId)
+   public Usuario(string Nome, string CPF, string Email, string Senha, string ConfirmaSenha, TipoUsuario tipo)
    {
         this.Nome = Nome;
         this.CPF = CPF;
         this.Email = Email;
         this.Senha = Senha;
         this.ConfirmaSenha = ConfirmaSenha;
-        this.tipoUsuarioId = tipoUsuarioId;
+        this.Tipo = tipo;
    }
 }
