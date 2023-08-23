@@ -5,12 +5,7 @@ namespace apiPagamento.Repository
 {
     public class CaixaRepository : ICaixaRepository
     {
-
         private readonly PagamentoContext _context = new PagamentoContext();
-
-        public CaixaRepository(PagamentoContext _context) {
-            this._context = _context;
-        }
         public void add(Caixa caixa)
         {
             this._context.caixas.Add(caixa);
@@ -29,7 +24,7 @@ namespace apiPagamento.Repository
 
         public void update(Caixa caixa)
         {
-            throw new NotImplementedException();
+           this._context.caixas.Update(caixa); this._context.SaveChanges();
         }
     }
 }

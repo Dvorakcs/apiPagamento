@@ -14,13 +14,13 @@ namespace apiPagamento.Services
             this._usuario = _usuario;
 
         }
-        public string EnviaPagamento(Usuario Usuario, double QuantidadeDinheiro,string EmailRecebente)
+        public string EnviaPagamento(int UsuarioId, double QuantidadeDinheiro,string EmailRecebente)
         {
-            if (Usuario == null) return "Usuario Invalido";
+           
             if (QuantidadeDinheiro == 0) return "Valor tem que Ser maior que 0";
             if (EmailRecebente == "") return "Insira um Email";
 
-            Usuario usuarioDb = this._usuario.Get(Usuario.Id);
+            Usuario usuarioDb = this._usuario.Get(UsuarioId);
             if (usuarioDb == null) return "Usuario nao existe";
 
             Usuario usuarioRecebente = this._usuario.emailGetUser(EmailRecebente);
@@ -39,9 +39,26 @@ namespace apiPagamento.Services
 
             caixa.QuantidadeValorCaixa -= QuantidadeDinheiro;
             caixaRecebente.QuantidadeValorCaixa += QuantidadeDinheiro;
-
+            this._caixas.update(caixa);
+            this._caixas.update(caixaRecebente);
 
             return "Transferencia Enviada";
+        }
+
+
+        public string AdicionaCredito(int usuarioId, double Valor)
+        {
+            Usuario usuarioDb = this._usuario.Get(usuarioId);
+            if (usuarioDb == null) return "Usuario nao existe";
+
+            Caixa caixa = this._caixas.Get(usuarioDb.Id);
+            if (caixa == null) return "Usuario nao tem caixa criado";
+
+            caixa.QuantidadeValorCaixa += Valor;
+
+            this._caixas.update(caixa);
+
+            return "Adicao de credito Efetuado";
         }
     }
 }

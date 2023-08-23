@@ -53,7 +53,7 @@ builder.Services.AddTransient<ICaixaRepository,CaixaRepository>();
 //carrega as classes que gerencia o repository 
 builder.Services.AddSingleton<UsuarioService>();
 builder.Services.AddSingleton<LoginService>();
-builder.Services.AddSingleton<Caixa>();
+builder.Services.AddSingleton<PagamentoService>();
 
 builder.Services.AddAuthentication(x =>
 {

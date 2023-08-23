@@ -11,6 +11,10 @@ namespace apiPagamento.Models
         public int UsuarioId { get; set; }
         public double QuantidadeValorCaixa { get; set; }
 
-
+        public Caixa(int usuarioId, double QuantidadeValorCaixa)
+        {
+            this.UsuarioId = usuarioId;
+            this.QuantidadeValorCaixa = QuantidadeValorCaixa;
+        }
     }
 }

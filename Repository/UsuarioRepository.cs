@@ -11,15 +11,12 @@ public class UsuarioRepository: IUsuarioRespository {
         if (usuario != null)
         {
             _context.usuarios.Add(usuario);
-
-
-            _context.caixas.Add(new Caixa
-            {
-                UsuarioId = usuario.Id,
-                QuantidadeValorCaixa = 0
-            });
-
             _context.SaveChanges();
+            Usuario usuariodb = _context.usuarios.FirstOrDefault(x => x.CPF == usuario.CPF);
+
+           _context.caixas.Add(new Caixa(usuariodb.Id, 0.0));
+           _context.SaveChanges();
+
         }
      
     }

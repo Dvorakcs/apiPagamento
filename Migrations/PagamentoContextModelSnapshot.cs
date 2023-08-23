@@ -18,6 +18,23 @@ namespace apiPagamento.Migrations
                 .HasAnnotation("ProductVersion", "7.0.10")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
+            modelBuilder.Entity("apiPagamento.Models.Caixa", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<double>("QuantidadeValorCaixa")
+                        .HasColumnType("double");
+
+                    b.Property<int>("UsuarioId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("caixa");
+                });
+
             modelBuilder.Entity("apiPagamento.Models.Usuario", b =>
                 {
                     b.Property<int>("Id")
