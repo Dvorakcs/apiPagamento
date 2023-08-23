@@ -51,6 +51,7 @@ builder.Services.AddSwaggerGen(x =>
 builder.Services.AddTransient<IUsuarioRespository,UsuarioRepository>();
 //carrega as classes que gerencia o repository 
 builder.Services.AddSingleton<UsuarioService>();
+builder.Services.AddSingleton<LoginService>();
 
 builder.Services.AddAuthentication(x =>
 {

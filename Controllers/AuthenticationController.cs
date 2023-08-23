@@ -8,17 +8,17 @@ namespace apiPagamento.Controllers
     [Route("api/Authentication")]
     public class AuthenticationController : Controller
     {
-        private readonly UsuarioService _usuario;
+        private readonly LoginService _login;
 
-        public AuthenticationController(UsuarioService _usuario)
+        public AuthenticationController(LoginService _login)
         {
-            this._usuario = _usuario;
+            this._login = _login;
         }
 
         [HttpPost]
         public IActionResult Auth(string email, string password)
         {
-            Usuario usuarioDb = this._usuario.GetUserForLogin(email, password);
+            Usuario usuarioDb = this._login.GetUserForLogin(email, password);
             if (usuarioDb == null) return BadRequest("Usuario nao existe");
 
 

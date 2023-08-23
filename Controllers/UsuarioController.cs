@@ -14,6 +14,7 @@ namespace apiPagamento.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    
     public class UsuarioController : ControllerBase
     {
         private readonly UsuarioService _usuario;
