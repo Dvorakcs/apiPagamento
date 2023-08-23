@@ -14,4 +14,5 @@ public class PagamentoContext:DbContext{
        optionsBuilder.UseMySql(connectionStringBd,serverVersion);
     }
     public DbSet<Usuario> usuarios {get;set;} = null!;
+    public DbSet<Caixa> caixas {get;set;} = null!;
 }
