@@ -12,6 +12,11 @@ public class UsuarioRepository: IUsuarioRespository {
         {
             _context.usuarios.Add(usuario);
             _context.SaveChanges();
+            Usuario usuariodb = _context.usuarios.FirstOrDefault(x => x.CPF == usuario.CPF);
+
+           _context.caixas.Add(new Caixa(usuariodb.Id, 0.0));
+           _context.SaveChanges();
+
         }
      
     }
@@ -43,7 +48,11 @@ public class UsuarioRepository: IUsuarioRespository {
 
         return usuario;
     }
-
+    public Usuario emailGetUser(string email)
+    {
+        Usuario usuarioDb = _context.usuarios.FirstOrDefault(x => x.Email == email);
+        return usuarioDb;
+    }
     public Usuario GetUserForLogin(string email, string password)
     {
        Usuario usuarioDb = _context.usuarios.FirstOrDefault(x => x.Email == email && x.Senha == password);
